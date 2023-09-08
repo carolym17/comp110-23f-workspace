@@ -5,13 +5,13 @@ __author__ = "730477957"
 guessed_word = str(input("Enter a 5-character word: "))
 
 if len(guessed_word) != 5:
-    print("Word must contain 5 characters")
+    print("Error: Word must contain 5 characters")
     exit()
 
 guessed_letter = str(input("Enter a single character: "))
 
 if len(guessed_letter) != 1:
-    print("Character must be a single character.")
+    print("Error: Character must be a single character.")
     exit()
 
 print("Searching for " + guessed_letter + " in " + guessed_word)
