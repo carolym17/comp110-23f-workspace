@@ -45,7 +45,7 @@ def input_guess(expected_length: int) -> str:
     """Prompts the user for a guess and continues to prompt until guess is correct length."""
     guess = (input(f"Enter a {(expected_length)} character word: "))
     while expected_length != len(guess): 
-       guess = (input(f"That wasn't {(expected_length)} chars! Try again: "))
+        guess = (input(f"That wasn't {(expected_length)} chars! Try again: "))
     return guess
 
 
@@ -56,7 +56,7 @@ def main() -> None:
     number_of_turns = 6
     won_the_game = False 
 # Prints the current turn the user is on
-    while number_of_turns > 0 and won_the_game == False:
+    while number_of_turns > 0 and won_the_game is False: 
         print(f"=== Turn {(6 - number_of_turns + 1)}/6 ===")
 # Prompt the user for a guess 
         guess: str = input_guess(len(secret_word))
@@ -71,11 +71,12 @@ def main() -> None:
         else:
             number_of_turns = number_of_turns - 1
 # If the user won, it indicates to the user that they won the game
-    if won_the_game == True: 
+    if won_the_game is True: 
         print(f"You won in {(6 - number_of_turns + 1)}/6 turns!")
 # If the user did not guess the correct word in six or less tries  
     else:
         print("X/6 - Sorry, try again tomorrow!")
+
 
 if __name__ == "__main__": 
     main()
