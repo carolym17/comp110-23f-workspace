@@ -9,6 +9,7 @@ GREEN_BOX: str = "\U0001F7E9"
 # Emoji for if letter in guess is in secret but in a different position
 YELLOW_BOX: str = "\U0001F7E8"  
 
+
 # Declaring function to check the length and if any characters match at the correct indices
 def contains_char(secret: str, letter: str) -> bool: 
     """Checks length and if character match at any indices of secret!"""
@@ -20,7 +21,8 @@ def contains_char(secret: str, letter: str) -> bool:
             found = True 
         i += 1
     return found
- 
+
+
 # Declaring fucntion return the string of emojis 
 def emojified(guess: str, secret: str) -> str:
     """Checks to add the correct emoji!"""
@@ -37,6 +39,7 @@ def emojified(guess: str, secret: str) -> str:
         a += 1
     return emoji
 
+
 # Declaring fucntion to prompt the user to guess a word of the correct length
 def input_guess(expected_length: int) -> str: 
     """Prompts the user for a guess and continues to prompt until guess is correct length."""
@@ -44,6 +47,7 @@ def input_guess(expected_length: int) -> str:
     while expected_length != len(guess): 
        guess = (input(f"That wasn't {(expected_length)} chars! Try again: "))
     return guess
+
 
 # Declaring main fucntion to implement the main Wodle game
 def main() -> None:
