@@ -5,6 +5,7 @@ __author__ = "730477957"
 # Importing randint to generate random numbers. 
 from random import randint
 
+
 # Defining a function named all that checks numbers at each index. 
 def all(list_numbers: list[int], number: int) -> bool: 
     """Returns True if all numbers match at indicated number."""
@@ -18,6 +19,7 @@ def all(list_numbers: list[int], number: int) -> bool:
             return False 
         idx += 1
     return True
+
 
 # Defining a fucntion max to find the highest number when provided a list of numbers. 
 def max(list_num2: list[int]) -> int:
@@ -33,7 +35,8 @@ def max(list_num2: list[int]) -> int:
             highest_number = list_num2[idx]
         idx += 1
     return highest_number
-    
+
+ 
 # Defining a fucntion called is_equal to check if the list fo numbers are the same in each index. 
 def is_equal(list_num3: list[int], list_num4: list[int]):
     """Returns True if every element at each index is equal in both lists."""
