@@ -44,7 +44,7 @@ def is_equal(list_num3: list[int], list_num4: list[int]):
 # If the lengths of the list do not match, returns False. 
     if len(list_num3) != len(list_num4):
         return False
-# Checks if lists match at each index. 
+# Checks if lists match at each index, only returns True if the lists match at every indice. 
     while idx < len(list_num3): 
         if list_num3[idx] != list_num4[idx]:
             idx += 1
