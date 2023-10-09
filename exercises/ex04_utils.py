@@ -7,12 +7,12 @@ __author__ = "730477957"
 def all(list_numbers: list[int], number: int) -> bool: 
     """Returns True if all numbers match at indicated number."""
 # If the length of the list is empty, returns False. 
-    if len(list_numbers) == []:
+    if len(list_numbers) <= 0:
         return False 
     idx: int = 0
 # Checks for number mathes at each index. 
     while idx < len(list_numbers):
-        if list_numbers(idx) != number:
+        if list_numbers[idx] != number:
             return False 
         idx += 1
     return True
@@ -35,7 +35,7 @@ def max(list_num2: list[int]) -> int:
 
  
 # Defining a fucntion called is_equal to check if the list fo numbers are the same in each index. 
-def is_equal(list_num3: list[int], list_num4: list[int]):
+def is_equal(list_num3: list[int], list_num4: list[int]) -> bool:
     """Returns True if every element at each index is equal in both lists."""
 # If the lengths of the list do not match, returns False. 
     if len(list_num3) != len(list_num4):
