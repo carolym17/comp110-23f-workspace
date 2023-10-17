@@ -2,10 +2,10 @@
  
 __author__ = "730477957"
  
-from turtle import Turtle, colormode, done 
+from turtle import Turtle, done 
 import random
  
-
+# Main function to call to put it all together. 
 def main() -> None:
     """The entrypoint of my scene."""
     random_sun = random.randint(-400, 250)
@@ -15,11 +15,12 @@ def main() -> None:
     draw_rectangle(turtle_1, -400, 400, 0, 1000, 1000, "Green", "Green")
     draw_house(turtle_1)
     draw_circle(turtle_1, random_sun, 200, 0, "Yellow", "Yellow", 50, 360) 
+    draw_line(turtle_1, -400, -210, 0, 1200, "Black")
     done()
 
 
 # Fucntion to draw a rectangle. 
-def draw_rectangle(turtle_1: Turtle, x: float, y: float, orientation: float, width: float, length: float, color_1: str, color_2: str):
+def draw_rectangle(turtle_1: Turtle, x: float, y: float, orientation: float, width: float, length: float, color_1: str, color_2: str) -> None:
     """Draws a rectangle.""" 
     turtle_1.penup()
     turtle_1.goto(x, y)
@@ -36,8 +37,8 @@ def draw_rectangle(turtle_1: Turtle, x: float, y: float, orientation: float, wid
         i = i + 1 
     turtle_1.end_fill()
 
-
-def draw_line(turtle_1: Turtle, x: float, y: float, orientation: float, length: float, color_1: str):
+# Function to draw a line. 
+def draw_line(turtle_1: Turtle, x: float, y: float, orientation: float, length: float, color_1: str) -> None:
     """Draws a line."""
     turtle_1.penup()
     turtle_1.goto(x, y)
@@ -48,7 +49,7 @@ def draw_line(turtle_1: Turtle, x: float, y: float, orientation: float, length: 
 
 
 # Function to draw a triangle roof. 
-def draw_triangle(turtle_1: Turtle, x: float, y: float, orientation: float, length: float, color_1: str, color_2: str):
+def draw_triangle(turtle_1: Turtle, x: float, y: float, orientation: float, length: float, color_1: str, color_2: str) -> None:
     """Draws a triangle."""
     turtle_1.begin_fill()
     turtle_1.color(color_1, color_2)
@@ -65,7 +66,7 @@ def draw_triangle(turtle_1: Turtle, x: float, y: float, orientation: float, leng
 
 
 # Function to draw the sun. 
-def draw_circle(turtle_1: Turtle, x: float, y: float, orientation: float, color_1: str, color_2: str, radius: float, angle: float):
+def draw_circle(turtle_1: Turtle, x: float, y: float, orientation: float, color_1: str, color_2: str, radius: float, angle: float) -> None:
     """Draws a circle."""
     turtle_1.begin_fill()
     turtle_1.color(color_1, color_2)
@@ -78,9 +79,10 @@ def draw_circle(turtle_1: Turtle, x: float, y: float, orientation: float, color_
 
 
 # Function to draw the house. 
-def draw_house(turtle_1: Turtle):
+def draw_house(turtle_1: Turtle) -> None:
+    """Puts together the house."""
     draw_rectangle(turtle_1, -30, -10, 0, 200, 200, "Pink", "Red")
-    draw_triangle(turtle_1,  -30, -10, 0, 200, "Blue", "Orange")
+    draw_triangle(turtle_1, -30, -10, 0, 200, "Blue", "Orange")
     draw_rectangle(turtle_1, 50, -170, 0, 40, 20, "Black", "White")
     
 
