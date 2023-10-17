@@ -5,6 +5,7 @@ __author__ = "730477957"
 from turtle import Turtle, done 
 import random
  
+
 # Main function to call to put it all together. 
 def main() -> None:
     """The entrypoint of my scene."""
@@ -36,6 +37,7 @@ def draw_rectangle(turtle_1: Turtle, x: float, y: float, orientation: float, wid
         turtle_1.right(90)
         i = i + 1 
     turtle_1.end_fill()
+
 
 # Function to draw a line. 
 def draw_line(turtle_1: Turtle, x: float, y: float, orientation: float, length: float, color_1: str) -> None:
