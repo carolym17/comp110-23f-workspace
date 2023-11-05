@@ -12,6 +12,7 @@ from dictionary import update_attendance
 # Importing pytest to test KeyError. 
 import pytest
 
+
 # Writing three test to test invert. 
 # Edge case for function invert, this case will have duplicate keys and should return a key error.  
 def test_invert_edge_case() -> None: 
@@ -46,7 +47,7 @@ def test_favorite_color_edge_case() -> None:
 
 # Use case for function favorite_color. 
 def test_favorite_color_use_case1() -> None: 
-    """Use test case for inputed dictionary length of only one key"""
+    """Use test case for inputed dictionary length of only one key."""
     input_dict: dict[str, str] = {"Albert": "Blue"}
     assert favorite_color(input_dict) == ("Blue")
 
@@ -64,6 +65,7 @@ def test_count_edge_case() -> None:
     """Edge case for when the list is empty."""
     input_list: list[str] = ()
     assert count(input_list) == {}
+
 
 # Use case for function count. 
 def test_count_case1() -> None: 
@@ -95,18 +97,19 @@ def test_alphabetizer_use1() -> None:
 
 
 # Use case for function alphabetizer. 
-def test_alphabetizer_use1() -> None:
+def test_alphabetizer_use2() -> None:
     """A use case where the words begin with the first and last letters of the alphabet."""
     list_input: list[str] = ["apple", "zebra"]
     assert alphabetizer(list_input) == {"a": ["apple"], "z": ["zebra"]}
 
 
 # Writing three test to test update_attendance. 
-# Edge case for function update_attendance. 
+# Edge case for function update_attendance.
 def test_update_attendance_edge() -> None:
     """Updating attendance for a day that has no students present"""
     attendance_log: dict = {"Monday": ["Vrinda", "Kaleb"], "Tuesday": ["Alyssa"], "Wednesday": []}
     assert update_attendance(attendance_log, "Wednesday", []) == {"Monday": ["Vrinda", "Kaleb"], "Tuesday": ["Alyssa"], "Wednesday": []}
+
 
 # Use case for function alphabetizer. 
 def test_update_attendance_use1() -> None:
@@ -123,5 +126,5 @@ def test_update_attendace_use2() -> None:
     attendance_log: dict = {"Monday": ["Vrinda", "Kaleb"], "Tuesday": ["Alyssa"]}
     day: str = "Wednesday" 
     student: str = "Kyle"
-    assert update_attendance(attendance_log, day, student) == {"Monday": ["Vrinda", "Kaleb"], "Tuesday": ["Alyssa", "Craig"], "Wednesday": ["Kyle"]}
+    assert update_attendance(attendance_log, day, student) == {"Monday": ["Vrinda", "Kaleb"], "Tuesday": ["Alyssa"], "Wednesday": ["Kyle"]}
     
