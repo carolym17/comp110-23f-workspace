@@ -19,7 +19,7 @@ def test_invert_edge_case() -> None:
     """Unit test if there are two duplicated keys."""
     test_dict: dict[str, str] = {"Antonio": "Seat 1", "Josh": "Seat 3", "Layla": "Seat 2", "Carrie": "Seat 3"}
     with pytest.raises(KeyError):
-          invert(test_dict)
+        invert(test_dict)
 
 
 # Use case #1 for invert function. 
@@ -41,7 +41,7 @@ def test_invert_use_case2() -> None:
 def test_favorite_color_edge_case() -> None: 
     """Unit test for favorite_color with no most popular color."""
     color_list: dict[str, str] = {"Albert": "Blue", "Makenna": "Yellow", "Alice": "Red"}
-    expected_result: list() = ("Blue, Yellow", "Red")
+    expected_result: list() = ["Blue, Yellow", "Red"]
     assert favorite_color(color_list) == expected_result
 
 
@@ -49,7 +49,7 @@ def test_favorite_color_edge_case() -> None:
 def test_favorite_color_use_case1() -> None: 
     """Use test case for inputed dictionary length of only one key."""
     input_dict: dict[str, str] = {"Albert": "Blue"}
-    assert favorite_color(input_dict) == ("Blue")
+    assert favorite_color(input_dict) == ["Blue"]
 
 
 # Use case for function favorite_color. 
@@ -106,23 +106,23 @@ def test_alphabetizer_use2() -> None:
 # Writing three test to test update_attendance. 
 # Edge case for function update_attendance.
 def test_update_attendance_edge() -> None:
-    """Updating attendance for a day that has no students present"""
-    attendance_log: dict = {"Monday": ["Vrinda", "Kaleb"], "Tuesday": ["Alyssa"], "Wednesday": []}
-    assert update_attendance(attendance_log, "Wednesday", []) == {"Monday": ["Vrinda", "Kaleb"], "Tuesday": ["Alyssa"], "Wednesday": []}
+    """Updating attendance for a day that has no students present."""
+    attendance_log: dict = {"Monday": ["Vrinda", "Kaleb"], "Tuesday": ["Alyssa"], "Wednesday": ""}
+    assert update_attendance(attendance_log, "Wednesday", "") == {"Monday": ["Vrinda", "Kaleb"], "Tuesday": ["Alyssa"], "Wednesday": ""}
 
 
-# Use case for function alphabetizer. 
+# Use case for function update_attendance. 
 def test_update_attendance_use1() -> None:
-    """Updates attedance for Tuesday to add the student Craig."""
+    """Updates attedance for the already existing day, Tuesday, to add the student Craig."""
     attendance_log: dict = {"Monday": ["Vrinda", "Kaleb"], "Tuesday": ["Alyssa"]}
     day: str = "Tuesday" 
     student: str = "Craig"
     assert update_attendance(attendance_log, day, student) == {"Monday": ["Vrinda", "Kaleb"], "Tuesday": ["Alyssa", "Craig"]}
 
 
-# Use case for function alphabetizer. 
+# Use case for function update_attendance. 
 def test_update_attendace_use2() -> None:
-    """Updates attendance log to the day Wednesday with Kyle."""
+    """Updates attendance log to the day Wednesday, which isn't in the log yet, with Kyle."""
     attendance_log: dict = {"Monday": ["Vrinda", "Kaleb"], "Tuesday": ["Alyssa"]}
     day: str = "Wednesday" 
     student: str = "Kyle"
