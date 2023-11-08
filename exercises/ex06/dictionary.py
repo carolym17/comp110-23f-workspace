@@ -60,7 +60,7 @@ def count(input: list[str]) -> dict[str, int]:
 
 
 def alphabetizer(input: list[str]) -> dict[str, list[str]]:
-    """Function  where each key is a unique letter in the alphabet and each value is a list of the words that begin with that letter."""
+    """Function where each key is a unique letter in the alphabet and each value is a list of the words that begin with that letter."""
     order_words: dict[str, list[str]] = {}
     word: str = ""
     for word in input:
@@ -73,11 +73,15 @@ def alphabetizer(input: list[str]) -> dict[str, list[str]]:
     return order_words
 
 
-def update_attendance(list_attendance: dict[str, list[str]], day: str, student: str) -> dict[str, list[str]]:
+def update_attendance(attendance_log: dict, day: str, student: str) -> dict:
     """Updates the attendance log."""
     # Updates the attendance list with the new attendance information, then return it. 
-    if day in list_attendance:
-        list_attendance[day].append(student)
+    if day in attendance_log:
+        student_exists: bool = False
+        if student in attendance_log[day]:
+            student_exists = True
+        if student_exists is False:
+            attendance_log[day].append(student)
     else: 
-        list_attendance[day] = [student]
-    return list_attendance
+        attendance_log[day] = [student]
+    return attendance_log
