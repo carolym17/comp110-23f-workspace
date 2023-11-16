@@ -52,6 +52,7 @@ class Pizza:
         return pizza_info
 
 # Magiv Method CL10 Lesson examples in VSCode. 
+# Calling constructor 
 my_pizza: Pizza = Pizza("medium", 3, False)
 print(str(my_pizza))
 sals_pizza: Pizza = Pizza("large", 1, True)

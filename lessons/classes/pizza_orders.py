@@ -6,6 +6,7 @@
 # from <filename>.<modeulename> import <class>
 from lessons.classes.pizza import Pizza
 
+# Calling its constructor
 my_pizza: Pizza = Pizza("large", 10, True) 
 
 # Assessing/setting attributes 

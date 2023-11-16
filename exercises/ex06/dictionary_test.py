@@ -3,11 +3,11 @@
 __author__ = "730477957"
 
 # Importing the functions to write tests for them. 
-from dictionary import invert
-from dictionary import favorite_color
-from dictionary import count
-from dictionary import alphabetizer
-from dictionary import update_attendance
+from exercises.ex06.dictionary import invert
+from exercises.ex06.dictionary import favorite_color
+from exercises.ex06.dictionary import count
+from exercises.ex06.dictionary import alphabetizer
+from exercises.ex06.dictionary import update_attendance
 
 # Importing pytest to test KeyError. 
 import pytest
